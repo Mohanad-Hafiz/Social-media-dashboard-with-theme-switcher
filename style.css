@@ -1,0 +1,342 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+html {
+    width: 100%;
+    height: 100%;
+}
+
+.light-mode {
+    --bg-top: hsl(225, 100%, 98%);
+    --bg: hsl(0, 0%, 100%);
+    --text-primary: hsl(230, 17%, 14%);
+    --text-secondary: hsl(228, 12%, 44%);
+    --toggle: hsl(230, 22%, 74%);
+    --card-bg: hsl(227, 47%, 96%);
+}
+
+.dark-mode {
+    --bg-top: hsl(232, 19%, 15%);
+    --bg: hsl(230, 17%, 14%);
+    --text-primary: hsl(0, 0%, 100%);
+    --text-secondary: hsl(228, 34%, 66%);
+    --toggle: linear-gradient(to right, hsl(210, 78%, 56%), hsl(146, 68%, 55%));
+    --card-bg: hsl(228, 28%, 20%);
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    width: 100%;
+    min-height: 100vh;
+    background-color: var(--bg);
+}
+
+body::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 30.5vh;
+    background-color: var(--bg-top);
+    border-radius: 0 0 20px 20px;
+    z-index: -1;
+}
+
+.container {
+    max-width: 79.2rem;
+    min-height: 100vh;
+    margin: auto;
+    position: relative;
+}
+
+.main-heading {
+  font-size: 2rem;  
+  color: var(--text-primary);
+  padding-top: 2.57rem;
+}
+
+.total {
+    color: var(--text-secondary);
+    margin-top: 0.23rem;
+}
+
+.toggle {
+    position: absolute;
+    right: 0;
+    top: 3.43rem;
+    display: flex;
+    flex-direction: row;
+    width: 9.5vw;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.toggle-button {
+    width: 3.5rem;
+    height: 1.7rem;
+    background: var(--toggle);
+    border-radius: 40px;
+    position: relative;
+    cursor: pointer;
+}
+
+.toggle-text {
+    font-weight: 700;
+    color: var(--text-secondary);
+}
+
+.toggle-circle {
+    height: 1.3rem;
+    width: 1.3rem;
+    border-radius: 50%;
+    background-color: var(--bg-top);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.toggle-off {
+    right: 7%;
+    transition: all ease 0.5s;
+}
+
+.toggle-on {
+    left: 7%;
+    transition: all ease 0.5s;
+}
+
+.followers {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    padding-top: 3rem;
+    align-items: flex-end;
+    flex-wrap: wrap;
+}
+
+.big-card {
+    width: 18.2rem;
+    height: 15.5rem;
+    background-color: var(--card-bg);
+    border-radius: 2%;
+    border-top: solid 0.3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.account {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    justify-content: center;
+    padding-top: 2.2rem;
+}
+
+.account-name {
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    align-self: center;
+}
+
+.icon {
+    justify-self: center;
+}
+
+.count {
+    font-size: 4rem;
+    font-weight: 700;
+    letter-spacing: -0.05em;
+    color: var(--text-primary);
+    padding-top: 1.2rem;
+}
+
+.type {
+    text-transform: uppercase;
+    letter-spacing: 0.35em;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+.rate {
+    font-weight: 700;
+    font-size: 0.9rem;
+    padding-top: 1.5rem;
+}
+
+.rate-increase {
+    color: hsl(163, 72%, 41%);
+}
+
+.rate-increase::before {
+    content: url(./images/icon-up.svg);
+    position: relative;
+    bottom: 0.2rem;
+    margin-right: 0.2rem;
+}
+
+.rate-decrease {
+    color: hsl(356, 69%, 56%);
+}
+
+.rate-decrease::before {
+    content: url(./images/icon-down.svg);
+    position: relative;
+    bottom: 0.15rem;
+    margin-right: 0.2rem;
+}
+
+.facebook {
+    border-top-color: hsl(208, 92%, 53%);
+}
+
+.twitter {
+    border-top-color: hsl(203, 89%, 53%);
+}
+
+.instagram {
+    position: relative;
+    border: none;
+    height: 15.2rem;
+    border-radius: 0 0 2% 2%;
+}
+
+.instagram::before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 15.5rem;
+    position: absolute;
+    bottom: 0;
+    background-image: linear-gradient(to right, hsl(37, 97%, 70%), hsl(329, 70%, 58%));
+    border-radius: 2%;
+    z-index: -1;
+}
+
+.youtube {
+    border-top-color: hsl(348, 97%, 39%);
+}
+
+.second-heading {
+  font-size: 1.7rem;  
+  color: var(--text-secondary);
+  padding-top: 3rem;
+}
+
+.overview {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-top: 2rem;
+}
+
+.small-card {
+    width: 18.2rem;
+    height: 9rem;
+    border-radius: 5%;
+    background-color: var(--card-bg);
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.overview-heading {
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    font-weight: 700;
+    color: var(--text-secondary);
+}
+
+.small-card img {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+}
+
+.overview-count {
+    position: absolute;
+    bottom: 1.5rem;
+    left: 2rem;
+    color: var(--text-primary);
+    font-size: 2.3rem;
+    font-weight: 700;
+}
+
+.small-card .rate {
+    position: absolute;
+    bottom: 2rem;
+    right: 2rem;
+}
+
+.attribution {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    font-weight: 700;
+    color: var(--text-primary);
+    font-size: 0.8rem;
+}
+
+.attribution a {
+    color: var(--text-secondary);
+    font-size: inherit;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all ease 0.5s;
+}
+
+.attribution a:hover {
+    color: hsl(356, 69%, 56%);
+}
+
+@media (max-width: 1024px) {
+
+    .container {
+        width: 86%;
+    }
+
+    .main-heading {
+        font-size: 1.7rem;
+    }
+
+    .toggle {
+        position: static;
+        width: 100%;
+        border-top: solid 1px var(--text-secondary);
+        margin-top: 1.8rem;
+        padding-top: 1rem;
+    }
+
+    .followers {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .big-card {
+        width: 100%;
+        margin-bottom: 2rem;
+    }
+
+    .second-heading {
+        padding-top: 1rem;
+    }
+
+    .small-card {
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+
+    .attribution {
+        position: relative;
+        margin-top: 2rem;
+    }
+
+}
